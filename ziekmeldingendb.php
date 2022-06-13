@@ -17,8 +17,8 @@ function verbindDB() {
 
 function toevoegenStudent($voornaam,$tussenvoegsel,$achternaam,$geboortedatum) {
     $conn = verbindDB();
-    $toevoegingQuery = "INSERT INTO studenten (voornaam,tussenvoegsel,achternaam,geboortedatum) ". 
-    "VALUES ('$voornaam','$tussenvoegsel','$achternaam','$geboortedatum')";
+    $toevoegingQuery = "INSERT INTO studenten (voornaam,tussenvoegsel,achternaam,geboortedatum,status) ". 
+    "VALUES ('$voornaam','$tussenvoegsel','$achternaam','$geboortedatum',NULL)";
     $stm = $conn->prepare($toevoegingQuery);
     return $stm->execute();
 
