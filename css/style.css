@@ -11,7 +11,7 @@ body {
 
 }
 
-#indexContent {
+.content {
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -42,4 +42,22 @@ a {
 
 table {
     margin-top: 18vh;
+}
+
+#studentenContent {
+    align-items: center;
+    justify-content: center;
+}
+
+#studentenForm {
+    background-color: purple;
+    color: yellow;
+    padding: 3vh;
+    border-radius: 15px;
+}
+
+.buttons {
+    margin-top: 2vh;
+    background-color: yellow;
+    color: purple;
 }
