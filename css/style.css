@@ -4,18 +4,15 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-}
-
-#fullpage {
     display: flex;
-
 }
+
 
 .content {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
 }
 
 #menu {
@@ -41,7 +38,23 @@ a {
 }
 
 table {
-    margin-top: 18vh;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 10vh auto;
+}
+
+th {
+    background-color:#288f21;
+}
+
+td,th {
+    text-align: center;
+    padding: 2vh;
+}
+
+
+tr:hover {
+    background-color: #D3D3D3;
 }
 
 #studentenContent {
@@ -50,7 +63,7 @@ table {
 }
 
 #studentenForm {
-    background-color: purple;
+    background-color: green;
     color: yellow;
     padding: 3vh;
     border-radius: 15px;
@@ -60,4 +73,22 @@ table {
     margin-top: 2vh;
     background-color: yellow;
     color: purple;
+}
+
+.statusLink {
+    text-decoration: underline;
+    color: black
+}
+
+#meldingenContent {
+    align-items: center;
+}
+
+#meldingForm {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    background-color: #288f21;
+    padding: 3vh;
+    color: pink;
 }
