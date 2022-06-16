@@ -1,5 +1,5 @@
 <div id="menu">
-    <a href="index.php">Overzicht</a>
-    <a href="studenten.php">Leerling toevoegen</a>
-    <a href=""></a>
+    <a class="menuLink" href="index.php">Overzicht</a>
+    <a  class="menuLink" href="studenten.php">Leerling toevoegen</a>
+    <a class="menuLink" href="meldingen.php">Ziek melden</a>
 </div>
