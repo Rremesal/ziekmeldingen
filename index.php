@@ -6,38 +6,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <title>Overzicht</title>
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-        <?php require("menu.php");?>
-        <div class="content">
-            <table>
-                <tr>
-                    <th>Voornaam</th>
-                    <th>Tussenvoegsel</h>
-                    <th>Achternaam</th>
-                    <th>Geboortedatum</th>
-                    <th></th>
-                </tr>
-                <?php 
-                    $selecteerStudentenQuery = "SELECT * FROM studenten";
-                    $stm = $conn->prepare($selecteerStudentenQuery);
-                    $stm->execute();
-                    $studenten = $stm->fetchAll(PDO::FETCH_OBJ);
-                    foreach($studenten as $student) {
-                ?>      <tr>
-                            <td><?= $student->voornaam?></td>
-                            <td><?=$student->tussenvoegsel?></td>
-                            <td><?=$student->achternaam?></td>
-                            <td><?=$student->geboortedatum?></td>
-                            <td>
-                                <a class="statusLink" href="meldingen.php?id=<?=$student->sid?>">Z</a>
-                                <a  class="statusLink" href="beter.php?id=">B</a>
-                            </td>
-                        </tr>
-                <?php } ?>
-            </table>
-        </div>
+    <?php require("menu.php");?>
+    <div class="content">
+        <h2 class="homeHeader">Presentie</h2>
+        <table>
+            
+            <tr>
+                <th>Voornaam</th>
+                <th>Achternaam</th>
+                <th>Geboortedatum</th>
+            </tr>
+            <?php 
+                $studentenQuery = "SELECT * FROM studenten WHERE sid NOT IN (SELECT sid FROM ziekmelding ". 
+                "WHERE status = 'Ziek');";
+                $stm = $conn->prepare($studentenQuery);
+                $stm->execute();
+                $studenten = $stm->fetchAll(PDO::FETCH_OBJ);
+                foreach($studenten as $student) {
+            ?>      <tr>
+                        <td><?= $student->voornaam?></td>
+                        <td><?=$student->achternaam,$student->tussenvoegsel?></td>
+                        <td><?=$student->geboortedatum?></td>
+                    </tr>
+            <?php } ?>
+        </table>
+        
+        <h2 class="homeHeader">Ziekmeldingen</h2>
+        <table>
+            
+            <tr>
+                <th>Voornaam</th>
+                <th>Achternaam</th>
+                <th>Startdatum</th>
+                <th>Status</th>
+                <th>Opmerkingen</th>
+            </tr>
+            <?php 
+                $ziekeStudent = "SELECT * FROM studenten s JOIN ziekmelding z ON s.sid = z.sid";
+                $stm = $conn->prepare($ziekeStudent);
+                $stm->execute();
+                $ziekeStudenten = $stm->fetchAll(PDO::FETCH_OBJ);
+                foreach($ziekeStudenten as $ziekeStudent) {
+            ?>      <tr>
+                        <td><?= $ziekeStudent->voornaam?></td>
+                        <td><?=$ziekeStudent->achternaam,$ziekeStudent->tussenvoegsel?></td>
+                        <td><?=$ziekeStudent->startdatum?></td>
+                        <td><?=$ziekeStudent->status?></td>
+                        <td><?=$ziekeStudent->opmerking?></td>
+                        <td><a href="beter.php?id=<?=$ziekeStudent->sid?>">Beter melden</a></td>
+                    </tr>
+            <?php
+                }
+            ?>
+        </table>
+    </div>
 </body>
 </html>
