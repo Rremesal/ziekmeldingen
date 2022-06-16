@@ -3,7 +3,7 @@ body {
     margin: 0;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
     display: flex;
 }
 
@@ -29,7 +29,7 @@ body {
     background-color: pink;
 }
 
-a {
+.menuLink {
     text-decoration: none;
     color: #288f21;
     font-weight: bold;
@@ -40,7 +40,11 @@ a {
 table {
     border-collapse: collapse;
     width: 80%;
-    margin: 10vh auto;
+    margin: 5vh auto;
+}
+
+.homeHeader {
+    margin-left: 10vw;
 }
 
 th {
@@ -80,6 +84,10 @@ tr:hover {
     color: black
 }
 
+.statusLink:hover {
+    color: blue;
+}
+
 #meldingenContent {
     align-items: center;
 }
@@ -91,4 +99,12 @@ tr:hover {
     background-color: #288f21;
     padding: 3vh;
     color: pink;
+}
+
+select {
+    margin-bottom: 1vh;
+}
+
+#btnZiek {
+    margin-top: 2vh;
 }
