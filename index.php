@@ -44,9 +44,10 @@
                 <th>Startdatum</th>
                 <th>Status</th>
                 <th>Opmerkingen</th>
+                <th></th>
             </tr>
             <?php 
-                $ziekeStudent = "SELECT * FROM studenten s JOIN ziekmelding z ON s.sid = z.sid";
+                $ziekeStudent = "SELECT * FROM studenten s JOIN ziekmelding z ON s.sid = z.sid WHERE einddatum IS NULL";
                 $stm = $conn->prepare($ziekeStudent);
                 $stm->execute();
                 $ziekeStudenten = $stm->fetchAll(PDO::FETCH_OBJ);

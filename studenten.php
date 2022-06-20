@@ -10,7 +10,7 @@
     <div class="content" id="studentenContent">
         <div id="studentenForm">
             <h2>Studenten Toevoegen</h2>
-            <form method="POST">
+            <form method="POST" class="forms">
                 <label for="txtVoornaam">Voornaam:</label>
                 <div><input type="text" name="txtVoornaam" id="txtVoornaam" required/></div>
                 <label for="txtTussenvoegsel">Tussenvoegsel:</label>
@@ -19,7 +19,7 @@
                 <div><input type="text" name="txtAchternaam" id="txtAchternaam" required/></div>
                 <label for="txtGeboortedatum">Geboortedatum:</label>
                 <div><input type="date" name="txtGeboortedatum" id="txtGeboortedatum" required/></div>
-                <input type="submit" class="buttons" name="btnSaveStudent"/><br/>
+                <input type="submit" class="btnForm" name="btnSaveStudent"/><br/>
                 <?php 
                     if(isset($_POST['btnSaveStudent'])) {
                         if(toevoegenStudent($_POST['txtVoornaam'],$_POST['txtTussenvoegsel'],$_POST['txtAchternaam'],$_POST['txtGeboortedatum']) == true) {

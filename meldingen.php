@@ -2,7 +2,8 @@
 <?php
     include("ziekmeldingendb.php");
     $conn = verbindDB();
-    $studentenQuery = "SELECT * FROM studenten";
+    $studentenQuery = "SELECT * FROM studenten WHERE sid NOT IN (SELECT sid FROM ziekmelding ". 
+    "WHERE status = 'Ziek');";
     $stm = $conn->prepare($studentenQuery);
     $stm->execute();
     $studenten = $stm->fetchAll(PDO::FETCH_OBJ);
@@ -19,7 +20,7 @@
     <?php require("menu.php");?>
     <div class="content" id="meldingenContent">
         <div id="meldingForm">
-            <form method="POST">
+            <form method="POST" class="forms">
                 <h2>Ziek melden</h2>
                 <label>Student:</label>
                 <select name="selectStudent">
@@ -34,7 +35,7 @@
                 <div><input type="date" name="txtStartdatum" id="startdatum"/></div>
                 <label for="txtOpmerking">Opmerkingen:</label>
                 <div><textarea name="txtOpmerking" id="txtOpmerking" rows="13" cols="70"></textarea></div>
-                <div><input type="submit" name="btnZiek" id="btnZiek"/></div>
+                <div><input type="submit" name="btnZiek" class="btnForm"/></div>
             </form>
         </div>
     </div>
