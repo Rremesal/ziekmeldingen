@@ -12,7 +12,7 @@
 <body>
     <?php require("menu.php");?>
     <div class="content" id="beterContent">
-        <div id="beterForm">
+        <div id="beterDiv">
             <h2>Beter melden</h2>
             <form method="POST" class="forms">
                 <label for="einddatum">Datum beter:</label>
