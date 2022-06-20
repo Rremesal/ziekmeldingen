@@ -79,8 +79,6 @@ tr:hover {
     margin-top: 10vh;
 }
 
-
-
 .statusLink {
     text-decoration: underline;
     color: black
@@ -130,4 +128,10 @@ select {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+textarea {
+    resize: none;
+    width: 50vw;
+    height: 20vh;
 }

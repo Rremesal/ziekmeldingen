@@ -34,7 +34,7 @@
                 <div><label for="startdatum">Datum afwezigheid</label><div>
                 <div><input type="date" name="txtStartdatum" id="startdatum"/></div>
                 <label for="txtOpmerking">Opmerkingen:</label>
-                <div><textarea name="txtOpmerking" id="txtOpmerking" rows="13" cols="70"></textarea></div>
+                <div><textarea name="txtOpmerking" id="txtOpmerking"></textarea></div>
                 <div><input type="submit" name="btnZiek" class="btnForm"/></div>
             </form>
         </div>
