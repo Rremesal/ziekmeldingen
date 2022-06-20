@@ -68,14 +68,14 @@ tr:hover {
     justify-content: center;
 }
 
-#studentenForm {
-    background-color: green;
-    color: pink;
+#studentenDiv {
+    background-color:#7DF9FF;
+    color: #288f21;
     padding: 3vh;
     border-radius: 15px;
 }
 
-#meldingForm {
+#meldingDiv {
     margin-top: 10vh;
 }
 
@@ -94,12 +94,12 @@ tr:hover {
 
 .forms {
     padding: 3vh;
-    background-color: #288f21;
-    color: pink;
+    background-color:#7DF9FF;
+    color: #288f21;
 }
 
 .btnForm {
-    background-color: pink;
+    background-color: #89CFF0;
     border: 1px black solid;
     margin-top: 1vh;
 }
@@ -110,7 +110,6 @@ tr:hover {
 
 select {
     margin-bottom: 1vh;
-    background-color: pink;
 }
 
 #btnZiek {
@@ -118,10 +117,10 @@ select {
 }
 
 #beterForm {
-    background-color: #288f21;
+    background-color: #7DF9FF;
     padding: 3vh;
     width: 40vw;
-    color: pink;
+    color: #288f21;
 }
 
 #beterContent {

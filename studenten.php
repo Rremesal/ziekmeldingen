@@ -8,7 +8,7 @@
 <body>
     <?php include("menu.php");?>
     <div class="content" id="studentenContent">
-        <div id="studentenForm">
+        <div id="studentenDiv">
             <h2>Studenten Toevoegen</h2>
             <form method="POST" class="forms">
                 <label for="txtVoornaam">Voornaam:</label>

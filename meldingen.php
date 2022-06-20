@@ -19,7 +19,7 @@
 <body>
     <?php require("menu.php");?>
     <div class="content" id="meldingenContent">
-        <div id="meldingForm">
+        <div id="meldingDiv">
             <form method="POST" class="forms">
                 <h2>Ziek melden</h2>
                 <label>Student:</label>
