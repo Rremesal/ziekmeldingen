@@ -31,7 +31,7 @@ body {
 
 .menuLink {
     text-decoration: none;
-    color: #288f21;
+    color: blue;
     font-weight: bold;
     padding: 5px 100%;
     font-size: 20px;
@@ -48,7 +48,8 @@ table {
 }
 
 th {
-    background-color:#288f21;
+    background-color:blue;
+    color: #89CFF0;
 }
 
 td,th {
@@ -70,13 +71,15 @@ tr:hover {
 
 #studentenDiv {
     background-color:#7DF9FF;
-    color: #288f21;
+    color: blue;
     padding: 3vh;
     border-radius: 15px;
 }
 
 #meldingDiv {
     margin-top: 10vh;
+    background-color:#7DF9FF;
+    border-radius: 15px;
 }
 
 .statusLink {
@@ -94,8 +97,7 @@ tr:hover {
 
 .forms {
     padding: 3vh;
-    background-color:#7DF9FF;
-    color: #288f21;
+    color: blue;
 }
 
 .btnForm {
@@ -121,6 +123,7 @@ select {
     padding: 3vh;
     width: 40vw;
     color: #288f21;
+    border-radius: 15px;
 }
 
 #beterContent {
