@@ -13,7 +13,6 @@ body {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    /* background-color: greenyellow; */
 }
 
 #menu {
@@ -21,13 +20,13 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 15vw;
-    background-color: purple;
+    background-color: aliceblue;
     align-items: center;
     overflow: hidden;
 }
 
 #menu a:hover {
-    background-color: pink;
+    background-color:#89CFF0;
 }
 
 .menuLink {
