@@ -14,16 +14,15 @@
     <div class="content">
         <h2 class="homeHeader">Presentie</h2>
         <table>
-            
             <tr>
                 <th>Voornaam</th>
                 <th>Achternaam</th>
                 <th>Geboortedatum</th>
             </tr>
             <?php 
-                $studentenQuery = "SELECT * FROM studenten WHERE sid NOT IN (SELECT sid FROM ziekmelding ". 
+                $query = "SELECT * FROM studenten WHERE sid NOT IN (SELECT sid FROM ziekmelding ". 
                 "WHERE status = 'Ziek') ORDER BY voornaam ASC;";
-                $stm = $conn->prepare($studentenQuery);
+                $stm = $conn->prepare($query);
                 $stm->execute();
                 $studenten = $stm->fetchAll(PDO::FETCH_OBJ);
                 foreach($studenten as $student) {
@@ -37,7 +36,6 @@
         
         <h2 class="homeHeader">Ziekmeldingen</h2>
         <table>
-            
             <tr>
                 <th>Voornaam</th>
                 <th>Achternaam</th>
@@ -47,8 +45,8 @@
                 <th></th>
             </tr>
             <?php 
-                $ziekeStudent = "SELECT * FROM studenten s JOIN ziekmelding z ON s.sid = z.sid WHERE einddatum IS NULL";
-                $stm = $conn->prepare($ziekeStudent);
+                $query = "SELECT * FROM studenten s JOIN ziekmelding z ON s.sid = z.sid WHERE einddatum IS NULL";
+                $stm = $conn->prepare($query);
                 $stm->execute();
                 $ziekeStudenten = $stm->fetchAll(PDO::FETCH_OBJ);
                 foreach($ziekeStudenten as $ziekeStudent) {
