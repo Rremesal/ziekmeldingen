@@ -8,6 +8,10 @@ body {
     background: url("https://www.metronieuws.nl/wp-content/uploads/2016/05/9f0800b97a5c891f05759ce64d307cf9-1462194768.jpg");
 }
 
+h2 {
+    color: blue ;
+}
+
 
 .content {
     display: flex;
