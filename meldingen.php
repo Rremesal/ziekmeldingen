@@ -1,10 +1,9 @@
-
 <?php
     include("ziekmeldingendb.php");
     $conn = verbindDB();
-    $studentenQuery = "SELECT * FROM studenten WHERE sid NOT IN (SELECT sid FROM ziekmelding ". 
+    $query = "SELECT * FROM studenten WHERE sid NOT IN (SELECT sid FROM ziekmelding ". 
     "WHERE status = 'Ziek');";
-    $stm = $conn->prepare($studentenQuery);
+    $stm = $conn->prepare($query);
     $stm->execute();
     $studenten = $stm->fetchAll(PDO::FETCH_OBJ);
 ?>
@@ -41,16 +40,7 @@
     </div>
 
     <?php 
-        if(isset($_POST['btnZiek'])) {
-            $toevoegenMeldingQuery = "INSERT INTO ziekmelding (sid,startdatum,opmerking,status) ". 
-            "VALUES (:sid,:startdatum,:opmerking,'Ziek')";
-            
-            $stm = $conn->prepare($toevoegenMeldingQuery);
-            $stm->bindParam(":sid",$_POST['selectStudent']);
-            $stm->bindParam(":startdatum",$_POST['txtStartdatum']);
-            $stm->bindParam(":opmerking",$_POST['txtOpmerking']);
-            $stm->execute();
-        }
+        if(isset($_POST['btnZiek'])) toevoegenZiekmelding($_POST['selectStudent'],$_POST['txtStartdatum'],$_POST['txtOpmerking'])
     ?>
     
 </body>
