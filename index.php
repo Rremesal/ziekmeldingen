@@ -22,7 +22,7 @@
             </tr>
             <?php 
                 $studentenQuery = "SELECT * FROM studenten WHERE sid NOT IN (SELECT sid FROM ziekmelding ". 
-                "WHERE status = 'Ziek');";
+                "WHERE status = 'Ziek') ORDER BY voornaam ASC;";
                 $stm = $conn->prepare($studentenQuery);
                 $stm->execute();
                 $studenten = $stm->fetchAll(PDO::FETCH_OBJ);
