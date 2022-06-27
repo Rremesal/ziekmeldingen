@@ -12,6 +12,13 @@ h2 {
     color: blue ;
 }
 
+#tabs {
+    display: flex;
+    margin-left: 8.5vw;
+    margin-top: 10vh;
+
+}
+
 
 .content {
     display: flex;
@@ -49,6 +56,14 @@ table {
     margin: 5vh auto;
 }
 
+button {
+    background-color: #7DF9FF;
+    border-color: #89CFF0;
+}
+#ziekmeldingTabel {
+    display: none;
+}
+
 .homeHeader {
     margin-left: 10vw;
 }
@@ -61,7 +76,7 @@ th {
 td,th {
     text-align: center;
     padding: 2vh;
-    width: 3vw;
+    width: 200vw;
 }
 
 tr {
