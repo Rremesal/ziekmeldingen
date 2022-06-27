@@ -40,7 +40,10 @@
     </div>
 
     <?php 
-        if(isset($_POST['btnZiek'])) toevoegenZiekmelding($_POST['selectStudent'],$_POST['txtStartdatum'],$_POST['txtOpmerking'])
+        if(isset($_POST['btnZiek'])) {
+            toevoegenZiekmelding($_POST['selectStudent'],$_POST['txtStartdatum'],$_POST['txtOpmerking']);
+            header("Location: index.php");
+        }
     ?>
     
 </body>

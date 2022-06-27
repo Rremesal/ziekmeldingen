@@ -24,6 +24,7 @@
                     if(isset($_POST['btnSaveStudent'])) {
                         if(toevoegenStudent($_POST['txtVoornaam'],$_POST['txtTussenvoegsel'],$_POST['txtAchternaam'],$_POST['txtGeboortedatum']) == true) {
                             echo "student opgeslagen";
+                            header("Location: index.php")
                 ?>          </form>
                 <?php
                         } else echo "er ging iets mis";
