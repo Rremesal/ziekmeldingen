@@ -12,7 +12,6 @@
 <body>
     <?php require("menu.php");?>
     <div class="content">
-        <!-- <h2 class="homeHeader">Presentie</h2> -->
         <div id="tabs"><button id="btnPresentie" onclick="veranderTabel()" disabled>Presentie</button><button id="btnZiekmelding" onclick="veranderTabel()">Ziekmeldingen</button></div>
         <table id="presentieTabel">
             <tr>
@@ -35,7 +34,6 @@
             <?php } ?>
         </table>
         
-        <!-- <h2 class="homeHeader">Ziekmeldingen</h2> -->
         <table id="ziekmeldingTabel">
             <tr>
                 <th>Voornaam</th>
