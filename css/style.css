@@ -159,3 +159,19 @@ textarea {
     width: 50vw;
     height: 20vh;
 }
+
+h1 {
+    color: blue;
+    margin: 5vh auto;
+}
+
+h3 {
+    background-color: #7DF9FF;
+    color: blue;
+    margin: 5vh auto;
+    margin-top: 3px;
+}
+
+#melding {
+    display: none;
+}

@@ -31,6 +31,7 @@
             $stm->bindParam(":einddatum",$_POST['einddatum']);
             $stm->bindParam(":status",$status);
             $stm->execute();
+            header("Location: index.php");
         }
     ?>
     
