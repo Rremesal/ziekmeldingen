@@ -20,6 +20,7 @@
                 <th>Geboortedatum</th>
             </tr>
             <?php 
+            //Een student komt in de presentietabel te staan als hij niet in de ziekmeldingtabel staat geregistreerd
                 $query = "SELECT * FROM studenten WHERE sid NOT IN (SELECT sid FROM ziekmelding ". 
                 "WHERE status = 'Ziek') ORDER BY voornaam ASC;";
                 $stm = $conn->prepare($query);
